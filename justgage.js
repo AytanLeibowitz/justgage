@@ -769,10 +769,12 @@ JustGage.prototype.kvLookup = function(key, tablea, tableb, defval, datatype, de
 };
 
 /** Refresh gauge level */
-JustGage.prototype.refresh = function(val, max) {
+JustGage.prototype.refresh = function(val, max, newLevelColors) {
 
   var obj = this;
   var displayVal, color, max = max || null;
+  
+  obj.config.levelColors = newLevelColors;
 
   // set new max
   if(max !== null) {
